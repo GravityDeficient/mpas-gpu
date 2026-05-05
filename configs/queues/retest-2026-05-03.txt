@@ -1,0 +1,34 @@
+# MPAS re-test queue 2026-05-03
+# Built after Documentation Audit revealed namelist drift invalidated several prior results.
+# See ~/Documents/Personal/Projects/MPAS-GPU-Physics/Documentation Audit — 2026-05-03.md
+#
+# Format:
+#   label|binary|namelist_variant|run_dir|ranks|duration
+#
+# All experiments use bayarea-3km validation mesh + RRTMGP namelist (the corrected one).
+# Each runs sequentially under flock — waits for WRF cron + prior queue items.
+# Ntfy on each completion to weather-ops topic.
+
+# ITEM 1: Re-validate Stage 0 reference baseline with current namelist + lock.
+# Should reproduce historical 4,460s. Confirms regression env still produces same number.
+stage0_reproducibility|rrtmgp_3_0_accel|rrtmgp|bayarea-3km|1|1_00:00:00
+
+# ITEM 2: Phase 4 dycore-OpenACC at correct namelist (was tested w/ RRTMG-CPU).
+# Direct re-test of the "negative result" finding. Same binary, correct comparison.
+phase4_rrtmgp_n1|dycore_openacc|rrtmgp|bayarea-3km|1|1_00:00:00
+
+# ITEM 3: Phase 4 + RANKS=20 at correct namelist (was killed early at 6h sim under wrong namelist).
+# Tests whether MPI scaling helps once radiation isn't the bottleneck.
+phase4_rrtmgp_n20|dycore_openacc|rrtmgp|bayarea-3km|20|1_00:00:00
+
+# ITEM 4: managed_global at RANKS=20 — does managed memory + multi-rank stack at 12k cells?
+# (Tonight's 24h is at RANKS=1; this is the multi-rank companion.)
+managed_global_n20|managed_global|rrtmgp|bayarea-3km|20|1_00:00:00
+
+# Future items (uncomment as plans firm up):
+#
+# WSM6 Stage E re-test once binary built:
+# stage_e_managed_n1|stage_e_managed|rrtmgp|bayarea-3km|1|1_00:00:00
+#
+# N=5 fresh MPAS baseline (low priority, historical curiosity):
+# gb10_baseline_n5_retry|gb10_baseline_n5|rrtmg|bayarea-3km|5|1_00:00:00

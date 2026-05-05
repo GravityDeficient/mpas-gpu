@@ -1,0 +1,17 @@
+! grid_rotate namelist.input for the Bay Area refinement zone.
+!
+! Used with NCAR's grid_rotate utility (from MPAS-Dev/MPAS-Tools/mesh_tools/grid_rotate)
+! to relocate the refinement center of a variable-resolution mesh (e.g. x20.835586,
+! the 60km → 3km mesh centered at 0°N 0°W) to the Bay Area.
+!
+! After rotation, feed the new .grid.nc into MPAS-Limited-Area with bayarea.custom.pts
+! to extract the regional subset.
+
+&input
+   config_original_latitude_degrees = 0
+   config_original_longitude_degrees = 0
+
+   config_new_latitude_degrees = 37.67
+   config_new_longitude_degrees = -122.49
+   config_birdseye_rotation_counter_clockwise_degrees = 0
+/

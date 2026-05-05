@@ -1,0 +1,17 @@
+# Recovery queue 2026-05-03 02:25 PT
+# The first queue runner had a stdin bug that consumed lines for items 2-4
+# (phase4_rrtmgp_n1, phase4_rrtmgp_n20, managed_global_n20). Item 5
+# managed_global_n1 ran instead of item 2, by accident. We still got valid
+# data from item 1 (stage0_reproducibility = 5,161s) and item 5 (managed_global_n1, in flight).
+#
+# Fix applied to run-queue.sh: bash run_forecast.sh < /dev/null
+# This file re-queues the missed experiments. Launch AFTER managed_global_n1 finishes.
+
+# Phase 4 dycore-OpenACC at correct (RRTMGP) namelist — RANKS=1
+phase4_rrtmgp_n1|dycore_openacc|rrtmgp|bayarea-3km|1|1_00:00:00
+
+# Phase 4 + RANKS=20
+phase4_rrtmgp_n20|dycore_openacc|rrtmgp|bayarea-3km|20|1_00:00:00
+
+# managed_global at RANKS=20
+managed_global_n20|managed_global|rrtmgp|bayarea-3km|20|1_00:00:00

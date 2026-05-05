@@ -1,0 +1,16 @@
+-- The Fortran compiler identification is NVHPC 26.3.0
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: /opt/nvidia/hpc_sdk/Linux_aarch64/26.3/compilers/bin/nvfortran - skipped
+CMake Warning (dev) at /usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake:243 (message):
+  Unable to determine default CMAKE_INSTALL_LIBDIR directory because no
+  target architecture is known.  Please enable at least one language before
+  including GNUInstallDirs.
+Call Stack (most recent call first):
+  CMakeLists.txt:48 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (0.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/admin/rrtmgp-probe/rte-rrtmgp/build

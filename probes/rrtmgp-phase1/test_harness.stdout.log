@@ -1,0 +1,22 @@
+Warning: ieee_inexact is signaling
+    0
+ === RRTMGP Phase 1 Feasibility Probe ===
+ 
+ gas_concs%init: OK with             8  gas names
+ 
+ --- Loading LW k-distribution ---
+ File: /home/admin/rrtmgp-probe/rrtmgp-data/rrtmgp-gas-lw-g256.nc
+LW get_ngpt()  = 256
+LW get_nband() = 16
+LW source_is_internal (should be T) = T
+LW is_loaded (should be T) = T
+ 
+ --- Loading SW k-distribution ---
+ File: /home/admin/rrtmgp-probe/rrtmgp-data/rrtmgp-gas-sw-g224.nc
+SW get_ngpt()  = 224
+SW get_nband() = 14
+SW source_is_external (should be T) = T
+SW is_loaded (should be T) = T
+ 
+ === VERIFICATION ===
+ RESULT: PASS  (LW=256, SW=224 as expected)

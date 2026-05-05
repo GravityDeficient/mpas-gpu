@@ -1,0 +1,42 @@
+# Build artifacts inside components (compiled, not source)
+*.o
+*.mod
+*.a
+
+# MPAS executables
+atmosphere_model
+atmosphere_model.*
+init_atmosphere_model
+init_atmosphere_model.*
+
+# Old top-level MPAS clone (pre-monorepo workflow) — no longer used
+/MPAS-Model/
+/mpas_static/
+
+# Compressed lookup tables / data tarballs
+*.tar.bz2
+*.tar.gz
+
+# Run-time outputs
+**/runs/**/history.*.nc
+**/runs/**/diag.*.nc
+**/runs/**/restart.*.nc
+**/runs/**/lbc.*.nc
+**/runs/**/GFS:*
+**/runs/**/GRIBFILE.*
+**/runs/**/*.log
+**/runs/**/gpu_*.log
+**/runs/**/log.atmosphere.*.out
+**/runs/**/log.init_atmosphere.*.out
+
+# Mesh and static data (large, downloaded separately)
+*.grid.nc
+*.static.nc
+*.init.nc
+*.graph.info
+*.graph.info.part.*
+
+# Local experiments / scratch
+scratch/
+*.bak
+*.tmp
