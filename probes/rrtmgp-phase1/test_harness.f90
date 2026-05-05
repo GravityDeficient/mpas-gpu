@@ -11,10 +11,12 @@ program test_harness
   type(ty_gas_concs)         :: gas_concs
   character(len=3), dimension(8) :: gas_names = &
       ['h2o', 'co2', 'o3 ', 'n2o', 'co ', 'ch4', 'o2 ', 'n2 ']
+  ! NOTE: Set these paths to your local copy of the rrtmgp-data submodule
+  ! (https://github.com/earth-system-radiation/rrtmgp-data).
   character(len=*), parameter :: LW_FILE = &
-      '/home/admin/rrtmgp-probe/rrtmgp-data/rrtmgp-gas-lw-g256.nc'
+      './rrtmgp-data/rrtmgp-gas-lw-g256.nc'
   character(len=*), parameter :: SW_FILE = &
-      '/home/admin/rrtmgp-probe/rrtmgp-data/rrtmgp-gas-sw-g224.nc'
+      './rrtmgp-data/rrtmgp-gas-sw-g224.nc'
   character(len=128) :: err_msg
   integer :: ngpt_lw, nband_lw, ngpt_sw, nband_sw
 
