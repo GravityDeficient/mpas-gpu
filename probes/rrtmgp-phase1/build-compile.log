@@ -1,22 +1,22 @@
 [  3%] Generating RTEKernels' C bindings header
 [  7%] Generating RRTMGPKernels' C bindings header
-Parsing /home/admin/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_rte_kind.F90 to /home/admin/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
+Parsing <build>/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_rte_kind.F90 to <build>/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
 Finished parsing: 0/0
 
-Parsing /home/admin/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_fluxes_broadband_kernels.F90 to /home/admin/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
+Parsing <build>/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_fluxes_broadband_kernels.F90 to <build>/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
 Processing: sum_broadband ... PASSED
 Processing: net_broadband_full ... PASSED
 Processing: net_broadband_precalc ... PASSED
 Finished parsing: 3/3
 
-Parsing /home/admin/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_rte_util_array.F90 to /home/admin/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
+Parsing <build>/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_rte_util_array.F90 to <build>/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
 Processing: zero_array_1D ... PASSED
 Processing: zero_array_2D ... PASSED
 Processing: zero_array_3D ... PASSED
 Processing: zero_array_4D ... PASSED
 Finished parsing: 4/4
 
-Parsing /home/admin/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_optical_props_kernels.F90 to /home/admin/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
+Parsing <build>/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_optical_props_kernels.F90 to <build>/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
 Processing: delta_scale_2str_f_k ... PASSED
 Processing: delta_scale_2str_k ... PASSED
 Processing: increment_1scalar_by_1scalar ... PASSED
@@ -42,7 +42,7 @@ Processing: extract_subset_dim2_4d ... PASSED
 Processing: extract_subset_absorption_tau ... PASSED
 Finished parsing: 23/23
 
-Parsing /home/admin/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_rte_solver_kernels.F90 to /home/admin/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
+Parsing <build>/rrtmgp-probe/rte-rrtmgp/rte-kernels/mo_rte_solver_kernels.F90 to <build>/rrtmgp-probe/rte-rrtmgp/build/headers/rte_kernels.h:
 Processing: lw_solver_noscat ... PASSED
 Processing: lw_solver_2stream ... PASSED
 Processing: sw_solver_noscat ... PASSED
@@ -51,11 +51,11 @@ Processing: lw_source_2str ... PASSED
 Processing: sw_dif_and_source ... PASSED
 Finished parsing: 6/6
 
-Parsing /home/admin/rrtmgp-probe/rte-rrtmgp/rrtmgp-kernels/mo_cloud_optics_rrtmgp_kernels.F90 to /home/admin/rrtmgp-probe/rte-rrtmgp/build/headers/rrtmgp_kernels.h:
+Parsing <build>/rrtmgp-probe/rte-rrtmgp/rrtmgp-kernels/mo_cloud_optics_rrtmgp_kernels.F90 to <build>/rrtmgp-probe/rte-rrtmgp/build/headers/rrtmgp_kernels.h:
 Processing: compute_cld_from_table ... PASSED
 Finished parsing: 1/1
 
-Parsing /home/admin/rrtmgp-probe/rte-rrtmgp/rrtmgp-kernels/mo_gas_optics_rrtmgp_kernels.F90 to /home/admin/rrtmgp-probe/rte-rrtmgp/build/headers/rrtmgp_kernels.h:
+Parsing <build>/rrtmgp-probe/rte-rrtmgp/rrtmgp-kernels/mo_gas_optics_rrtmgp_kernels.F90 to <build>/rrtmgp-probe/rte-rrtmgp/build/headers/rrtmgp_kernels.h:
 Processing: interpolation ... PASSED
 Processing: compute_tau_absorption ... PASSED
 Processing: compute_tau_rayleigh ... PASSED
@@ -79,9 +79,9 @@ Finished parsing: 4/4
 [ 51%] Building Fortran object rte-frontend/CMakeFiles/rte.dir/mo_fluxes.F90.o
 [ 55%] Building Fortran object rte-frontend/CMakeFiles/rte.dir/mo_rte_sw.F90.o
 [ 59%] Building Fortran object rte-frontend/CMakeFiles/rte.dir/mo_rte_lw.F90.o
-NVFORTRAN-W-0130-Floating point underflow. Check constants and constant expressions (/home/admin/rrtmgp-probe/rte-rrtmgp/rte-frontend/mo_rte_lw.F90: 130)
+NVFORTRAN-W-0130-Floating point underflow. Check constants and constant expressions (<build>/rrtmgp-probe/rte-rrtmgp/rte-frontend/mo_rte_lw.F90: 130)
   0 inform,   1 warnings,   0 severes, 0 fatal for rte_lw
-NVFORTRAN-W-0130-Floating point underflow. Check constants and constant expressions (/home/admin/rrtmgp-probe/rte-rrtmgp/rte-frontend/mo_rte_lw.F90: 130)
+NVFORTRAN-W-0130-Floating point underflow. Check constants and constant expressions (<build>/rrtmgp-probe/rte-rrtmgp/rte-frontend/mo_rte_lw.F90: 130)
   0 inform,   1 warnings,   0 severes, 0 fatal for rte_lw
 [ 62%] Linking Fortran static library librte.a
 [ 62%] Built target rte
