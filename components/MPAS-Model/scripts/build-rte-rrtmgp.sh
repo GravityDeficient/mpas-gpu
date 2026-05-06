@@ -9,9 +9,9 @@
 #       git submodule update --init src/external/rte-rrtmgp
 #   * nvhpc (nvfortran) in PATH
 #   * NETCDFF_PATH env var pointing at an nvfortran-compatible netcdf-fortran
-#     install. Defaults to /home/admin/rrtmgp-probe/ncf-nvhpc on Huginn. Fresh
-#     hosts typically need to build netcdf-fortran 4.6.1 from source with
-#     nvfortran first (static libs, --disable-shared, linking system libnetcdf).
+#     install. Required — script bails if unset. Fresh hosts typically need
+#     to build netcdf-fortran 4.6.1 from source with nvfortran first (static
+#     libs, --disable-shared, linking system libnetcdf).
 #
 # Produces:
 #   src/external/rte-rrtmgp/install/lib/librte.a, librrtmgp.a
@@ -28,7 +28,7 @@ RTE_DIR="${MPAS_ROOT}/src/external/rte-rrtmgp"
 INSTALL_DIR="${RTE_DIR}/install"
 BUILD_DIR="${RTE_DIR}/build"
 
-NETCDFF_PATH="${NETCDFF_PATH:-/home/admin/rrtmgp-probe/ncf-nvhpc}"
+: "${NETCDFF_PATH:?NETCDFF_PATH must be set to your netCDF-Fortran (NVHPC-built) install prefix, e.g. /usr/local/netcdf-fortran-nvhpc}"
 NVFORTRAN="${NVFORTRAN:-nvfortran}"
 # Phase 3: KERNEL_MODE=default builds the CPU kernels (Phase 2 path).
 # KERNEL_MODE=accel uses rte-rrtmgp's pre-annotated OpenACC kernels in the

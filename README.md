@@ -45,10 +45,35 @@ The closest published analog is Kim & Kang 2021 (*Computers & Geosciences*) — 
 ```bash
 git clone git@github.com:GravityDeficient/mpas-gpu.git
 cd mpas-gpu/components/MPAS-Model
+
+# Required env (set to your install prefixes):
+export NVHPC_SDK=/path/to/nvidia/hpc_sdk/Linux_aarch64/<version>
+export PATH="$NVHPC_SDK/compilers/bin:$NVHPC_SDK/comm_libs/mpi/bin:$PATH"
+export NETCDF=/usr            # or wherever libnetcdf lives (Debian: /usr)
+export PNETCDF=/usr           # or wherever libpnetcdf lives (Debian: /usr)
+export NETCDFF_PATH=/path/to/netcdf-fortran-nvhpc  # NVHPC-built netcdf-fortran
+export RRTMGP_PATH=$(pwd)/src/external/rte-rrtmgp/install  # after build-rte-rrtmgp.sh
+
+# Build rte-rrtmgp libraries first (one-time, ~5min):
+scripts/build-rte-rrtmgp.sh
+
+# Then build MPAS atmosphere core:
 make nvhpc CORE=atmosphere PRECISION=single OPENACC=true USE_PIO2=true
 ```
 
-That's it — no setup step. MMM-physics lives at the path the upstream Makefile expects (`src/core_atmosphere/physics/physics_mmm/`), nested directly inside MPAS-Model as a git subtree. No symlinks, no copy step, no patch to upstream Makefile.
+No symlinks, no copy step, no patch to upstream Makefile. MMM-physics lives at the path the upstream Makefile expects (`src/core_atmosphere/physics/physics_mmm/`), nested directly inside MPAS-Model as a git subtree.
+
+### Required environment variables
+
+| Var | Purpose | Example |
+|---|---|---|
+| `NVHPC_SDK` | NVIDIA HPC SDK install root | `/opt/nvidia/hpc_sdk/Linux_aarch64/26.3` |
+| `NETCDF` | netCDF-C install prefix | `/usr` (Debian system pkg) |
+| `PNETCDF` | parallel-netCDF install prefix | `/usr` (Debian system pkg) |
+| `NETCDFF_PATH` | netCDF-Fortran *built with NVHPC* install prefix | `/usr/local/netcdf-fortran-nvhpc` |
+| `RRTMGP_PATH` | rte-rrtmgp install prefix (after build) | `<MPAS-Model>/src/external/rte-rrtmgp/install` |
+
+**Why `NETCDFF_PATH` matters**: the system netcdf-fortran on most distros is built with gfortran. nvfortran can't read its `.mod` files — you need a separate netcdf-fortran built against nvfortran. This is the most common build hurdle on fresh hardware.
 
 ## Repo organization
 

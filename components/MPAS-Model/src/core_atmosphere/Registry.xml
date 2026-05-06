@@ -2310,7 +2310,7 @@
                      description="configuration for short-wave radiation schemes"
                      possible_values="`suite',`rrtmg_sw',`rrtmgp_sw',`cam_sw',`off'"/>
 
-                <nml_option name="config_rrtmgp_data_dir" type="character" default_value="/home/admin/rrtmgp-probe/rrtmgp-data" in_defaults="false"
+                <nml_option name="config_rrtmgp_data_dir" type="character" default_value="./rrtmgp-data" in_defaults="false"
                      units="-"
                      description="directory holding the RRTMGP k-distribution + cloud-optics netCDF coefficient files"
                      possible_values="any readable directory path"/>

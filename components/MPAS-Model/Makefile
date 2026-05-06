@@ -791,7 +791,9 @@ endif
 #   make nvhpc CORE=atmosphere OPENACC=true RRTMGP_PATH=... NETCDFF_PATH=...
 #
 RRTMGP_PATH  ?= $(CURDIR)/src/external/rte-rrtmgp/install
-NETCDFF_PATH ?= /home/admin/rrtmgp-probe/ncf-nvhpc
+ifndef NETCDFF_PATH
+$(error NETCDFF_PATH is not set. Export to your netCDF-Fortran (NVHPC-built) install prefix, e.g. NETCDFF_PATH=/usr/local/netcdf-fortran-nvhpc)
+endif
 export RRTMGP_PATH NETCDFF_PATH
 
 CPPINCLUDES += -I$(RRTMGP_PATH)/include -I$(NETCDFF_PATH)/include
