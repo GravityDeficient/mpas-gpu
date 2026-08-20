@@ -1,6 +1,6 @@
 # NCAR's `atmosphere/develop-openacc` branch
 
-**Discovered:** 2026-04-15, while setting up the MPAS fork on Huginn.
+**Discovered:** 2026-04-15, while setting up the MPAS fork on the GB10 now named Geri.
 **Impact:** Significant — reshapes the WSM6 port approach from "write from scratch" to "translate proven patterns from NCAR's prior work."
 
 ## Summary

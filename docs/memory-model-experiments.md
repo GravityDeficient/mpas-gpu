@@ -64,7 +64,7 @@ That effort rolls naturally into the Tier 3 physics port work (WSM6 OpenACC, MYN
 OpenACC, RRTMGP integration) — both involve editing Fortran. Tier 2 ("compile flag
 eliminates transfers") is closed.
 
-## Files kept on Huginn for reference
+## Files kept on Geri for reference
 
 | File | Content |
 |---|---|

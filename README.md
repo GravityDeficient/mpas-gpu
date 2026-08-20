@@ -34,7 +34,7 @@ The closest published analog is Kim & Kang 2021 (*Computers & Geosciences*) — 
 
 ## Hardware target
 
-- **Primary**: NVIDIA Grace Blackwell GB10 (DGX Spark / "huginn") — Arm v9 (Cortex-X925/A725), Blackwell GPU sm_121a, 128 GB LPDDR5x unified memory
+- **Primary**: Geri, NVIDIA Grace Blackwell GB10 (ASUS GX10) — Arm v9 (Cortex-X925/A725), Blackwell GPU sm_121a, 128 GB LPDDR5x unified memory
 - **Future**: GB200 NVL72 / Blackwell cloud clusters (mostly the same code path)
 - **Compiler**: NVIDIA HPC SDK 26.3 (`nvfortran` 26.3) on Ubuntu 24.04 aarch64
 - **MPI**: NVHPC-bundled OpenMPI 4.1.7
